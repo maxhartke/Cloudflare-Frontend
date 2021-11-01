@@ -18,7 +18,7 @@ const PostCard = (props: { post: post }) => {
 	return (
 		<div style={{ width: width > 600 ? 600 : 350 }}>
 			<MediaCard
-				title={props.post.title + props.post.username}
+				title={props.post.username + ":  " + props.post.title}
 				description={props.post.content ?? "null"}
 				size="small"
 				portrait={true}
@@ -60,15 +60,18 @@ const PostCard = (props: { post: post }) => {
 						height: 40,
 						marginTop: 15,
 						marginBottom: -18,
+						marginLeft: 25,
 					}}
 				>
 					{like ? (
-						<HeartIcon fill={"#24292E"} size={24} />
+						<div onClick={() => setlike(!like)}>
+							<HeartIcon fill={"#24292E"} size={24} />
+						</div>
 					) : (
-						<HeartFillIcon fill={"#f00"} size={24} />
+						<div onClick={() => setlike(!like)}>
+							<HeartFillIcon fill={"#f00"} size={24} />
+						</div>
 					)}
-
-					<ShareIcon fill={"#24292E"} size={24} />
 				</div>
 			</MediaCard>
 		</div>
