@@ -3,6 +3,7 @@ import { MediaCard, Spinner } from "@shopify/polaris";
 import React, { useEffect, useState } from "react";
 import { post } from "./post";
 import { useWindowDimensions } from "./Skeleton";
+
 const PostCard = (props: { post: post }) => {
 	const [like, setlike] = useState(true);
 	const [isLoading, setisLoading] = useState(false);
@@ -60,7 +61,7 @@ const PostCard = (props: { post: post }) => {
 						height: 40,
 						marginTop: 15,
 						marginBottom: -18,
-						marginLeft: 25,
+						marginInline: 25,
 					}}
 				>
 					{like ? (
@@ -72,6 +73,9 @@ const PostCard = (props: { post: post }) => {
 							<HeartFillIcon fill={"#f00"} size={24} />
 						</div>
 					)}
+					<div onClick={() => alert(props.post.url)}>
+						<ShareIcon fill={"#24292E"} size={24}></ShareIcon>
+					</div>
 				</div>
 			</MediaCard>
 		</div>
