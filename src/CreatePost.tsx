@@ -108,4 +108,5 @@ export const pageStyle: CSS.Properties = {
 	flexDirection: "column",
 	justifyContent: "center",
 	alignItems: "center",
+	overflowWrap: "break-word",
 };
